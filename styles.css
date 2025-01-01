@@ -354,4 +354,10 @@ body {
     .search-grid {
         grid-template-columns: 1fr;
     }
+    /* Search Page Styles */
+.search-header {
+    background: var(--primary);
+    padding: 2rem 0;
+    color: white;
+}
 }
