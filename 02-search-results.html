@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find and compare local home service providers. Filter by service type, availability, ratings, and response time.">
+    
+    <title>Search Service Providers | Home Services Directory</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema Markup for Search Results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SearchResultsPage",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": []
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation (same as home page) -->
+    
+    <!-- Search Header -->
+    <div class="search-header">
+        <div class="container">
+            <div class="search-form">
+                <!-- Dynamic Search Form -->
+                <form action="/search" method="GET" class="search-main">
+                    <div class="search-inputs">
+                        <select name="service" class="select-input">
+                            <option value="">All Services</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="electrical">Electrical</option>
+                            <option value="hvac">HVAC</option>
+                        </select>
+                        
+                        <input type="text" 
+                               name="location" 
+                               class="search-input" 
+                               placeholder="ZIP or Location"
+                               value="{{current_location}}">
+                        
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+
+                    <!-- Quick Filters -->
+                    <div class="quick-filters">
+                        <label class="checkbox">
+                            <input type="checkbox" name="available_now" {{if available_now}}checked{{/if}}>
+                            Available Now
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="emergency" {{if emergency}}checked{{/if}}>
+                            Emergency Service
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results Content -->
+    <div class="container">
+        <div class="search-grid">
+            <!-- Filters Sidebar -->
+            <aside class="filters">
+                <div class="filter-card">
+                    <h3>Filter Results</h3>
+                    
+                    <!-- Service Type Filter -->
+                    <div class="filter-section">
+                        <h4>Service Type</h4>
+                        {{#each service_types}}
+                        <label class="checkbox">
+                            <input type="checkbox" name="service_type" value="{{this.id}}" 
+                                   {{if this.selected}}checked{{/if}}>
+                            {{this.name}} ({{this.count}})
+                        </label>
+                        {{/each}}
+                    </div>
+
+                    <!-- Availability Filter -->
+                    <div class="filter-section">
+                        <h4>Availability</h4>
+                        <label class="radio">
+                            <input type="radio" name="availability" value="now"> Available Now
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="availability" value="today"> Available Today
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="availability" value="all"> Show All
+                        </label>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-section">
+                        <h4>Rating</h4>
+                        <label class="radio">
+                            <input type="radio" name="rating" value="4.5"> 4.5+ Stars
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rating" value="4.0"> 4.0+ Stars
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rating" value="all"> All Ratings
+                        </label>
+                    </div>
+
+                    <!-- Distance Filter -->
+                    <div class="filter-section">
+                        <h4>Distance</h4>
+                        <label class="radio">
+                            <input type="radio" name="distance" value="5"> Within 5 miles
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="distance" value="10"> Within 10 miles
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="distance" value="20"> Within 20 miles
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Results Section -->
+            <main class="results">
+                <!-- Results Header -->
+                <div class="results-header">
+                    <div class="results-count">
+                        {{total_results}} providers found
+                    </div>
+                    <div class="results-sort">
+                        <select class="sort-select">
+                            <option value="recommended">Recommended</option>
+                            <option value="response_time">Fastest Response</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="distance">Nearest</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Provider Cards Container -->
+                <div class="provider-results">
+                    {{#each providers}}
+                    <article class="provider-card">
+                        <!-- Provider Image -->
+                        <div class="provider-image">
+                            <img src="{{this.image_url}}" alt="{{this.business_name}}">
+                            {{#if this.available_now}}
+                            <div class="status-badge">Available Now</div>
+                            {{/if}}
+                        </div>
+
+                        <!-- Provider Info -->
+                        <div class="provider-info">
+                            <h2>{{this.business_name}}</h2>
+                            <div class="provider-meta">
+                                <span class="rating">⭐ {{this.rating}}</span>
+                                <span class="reviews">({{this.review_count}} reviews)</span>
+                                <span class="response">{{this.response_time}}min response</span>
+                            </div>
+                            
+                            <p>{{this.description}}</p>
+                            
+                            <div class="provider-tags">
+                                {{#each this.services}}
+                                <span class="tag">{{this}}</span>
+                                {{/each}}
+                            </div>
+                        </div>
+
+                        <!-- Provider Actions -->
+                        <div class="provider-actions">
+                            {{#if this.emergency_available}}
+                            <button class="btn btn-danger">Emergency Call</button>
+                            {{/if}}
+                            <a href="/provider/{{this.id}}" class="btn btn-primary">View Profile</a>
+                        </div>
+                    </article>
+                    {{/each}}
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    {{#if has_previous}}
+                    <a href="?page={{previous_page}}" class="btn btn-outline">Previous</a>
+                    {{/if}}
+                    
+                    <div class="page-numbers">
+                        {{#each pages}}
+                        <a href="?page={{this}}" 
+                           class="btn {{#if this.active}}btn-primary{{else}}btn-outline{{/if}}">
+                            {{this}}
+                        </a>
+                        {{/each}}
+                    </div>
+                    
+                    {{#if has_next}}
+                    <a href="?page={{next_page}}" class="btn btn-outline">Next</a>
+                    {{/if}}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer (same as home page) -->
+</body>
+</html>
