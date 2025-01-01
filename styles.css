@@ -306,4 +306,35 @@ body {
     .emergency-grid {
         grid-template-columns: 1fr;
     }
+    /* Add this to your existing CSS */
+
+/* Icons */
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-lg {
+    width: 48px;
+    height: 48px;
+}
+
+.icon-emergency {
+    color: var(--danger);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    background: rgba(71, 100, 230, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
 }
