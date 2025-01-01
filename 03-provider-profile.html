@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{business_name}} - Professional {{service_type}} services in {{location}}. Available 24/7 for emergency services. {{rating}} stars from {{review_count}} reviews.">
+    
+    <title>{{business_name}} | Professional {{service_type}} Services</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema Markup for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "{{business_name}}",
+        "image": "{{business_image}}",
+        "telephone": "{{phone}}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{address}}",
+            "addressLocality": "{{city}}",
+            "addressRegion": "{{state}}",
+            "postalCode": "{{zip}}"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "{{latitude}}",
+            "longitude": "{{longitude}}"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "{{rating}}",
+            "reviewCount": "{{review_count}}"
+        },
+        "openingHours": "Mo-Su 00:00-23:59"
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation (same as home page) -->
+
+    <!-- Emergency Status Banner -->
+    {{#if emergency_available}}
+    <div class="emergency-profile-banner">
+        <div class="container">
+            <div class="emergency-status">
+                <span class="status-indicator"></span>
+                Available for Emergency Service
+            </div>
+            <div class="emergency-response">
+                Average Response Time: {{response_time}} minutes
+            </div>
+            <button class="btn btn-danger btn-lg">Call Now: {{phone}}</button>
+        </div>
+    </div>
+    {{/if}}
+
+    <!-- Provider Profile Header -->
+    <section class="profile-header">
+        <div class="container">
+            <div class="profile-overview">
+                <div class="profile-main">
+                    <div class="profile-image">
+                        <img src="{{business_image}}" alt="{{business_name}}">
+                    </div>
+                    <div class="profile-info">
+                        <h1>{{business_name}}</h1>
+                        <div class="profile-meta">
+                            <span class="rating">⭐ {{rating}}</span>
+                            <span class="reviews">({{review_count}} reviews)</span>
+                            <span class="verified-badge">✓ Verified Provider</span>
+                        </div>
+                        <div class="profile-tags">
+                            {{#each service_types}}
+                            <span class="tag">{{this}}</span>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-actions">
+                    {{#if emergency_available}}
+                    <button class="btn btn-danger btn-lg">Emergency Service</button>
+                    {{/if}}
+                    <button class="btn btn-primary btn-lg">Schedule Service</button>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats">
+                <div class="stat-item">
+                    <div class="stat-value">{{response_time}}min</div>
+                    <div class="stat-label">Avg. Response</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{{jobs_completed}}</div>
+                    <div class="stat-label">Jobs Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">{{years_experience}}+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="profile-grid">
+            <!-- Main Content Column -->
+            <main class="profile-main-content">
+                <!-- About Section -->
+                <section class="profile-section card">
+                    <h2>About</h2>
+                    <p>{{business_description}}</p>
+                    
+                    <div class="credentials">
+                        {{#if license_number}}
+                        <div class="credential-item">
+                            <span class="credential-label">License:</span>
+                            <span class="credential-value">{{license_number}}</span>
+                        </div>
+                        {{/if}}
+                        
+                        {{#if insurance_coverage}}
+                        <div class="credential-item">
+                            <span class="credential-label">Insurance:</span>
+                            <span class="credential-value">${{insurance_coverage}}</span>
+                        </div>
+                        {{/if}}
+                    </div>
+                </section>
+
+                <!-- Services & Pricing -->
+                <section class="profile-section card">
+                    <h2>Services & Pricing</h2>
+                    <div class="services-grid">
+                        {{#each services}}
+                        <div class="service-item">
+                            <div class="service-info">
+                                <h3>{{this.name}}</h3>
+                                <p>{{this.description}}</p>
+                            </div>
+                            <div class="service-price">
+                                From ${{this.price}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </section>
+
+                <!-- Reviews Section -->
+                <section class="profile-section card">
+                    <div class="section-header">
+                        <h2>Customer Reviews</h2>
+                        <div class="review-summary">
+                            <div class="rating-large">{{rating}}</div>
+                            <div class="rating-details">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <div class="review-count">{{review_count}} reviews</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-list">
+                        {{#each reviews}}
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-name">{{this.name}}</div>
+                                    <div class="review-date">{{this.date}}</div>
+                                </div>
+                                <div class="review-rating">
+                                    {{this.rating}} ⭐
+                                </div>
+                            </div>
+                            <p class="review-text">{{this.text}}</p>
+                            {{#if this.provider_response}}
+                            <div class="provider-response">
+                                <strong>Provider Response:</strong>
+                                <p>{{this.provider_response}}</p>
+                            </div>
+                            {{/if}}
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <!-- Pagination for reviews -->
+                    <div class="reviews-pagination">
+                        <!-- Pagination component -->
+                    </div>
+                </section>
+            </main>
+
+            <!-- Sidebar -->
+            <aside class="profile-sidebar">
+                <!-- Contact Card -->
+                <div class="card contact-card">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <span class="value">{{phone}}</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <span class="value">{{address}}</span>
+                        </div>
+                        {{#if website}}
+                        <div class="contact-item">
+                            <span class="icon">🌐</span>
+                            <span class="value">{{website}}</span>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+
+                <!-- Service Area Card -->
+                <div class="card">
+                    <h3>Service Area</h3>
+                    <div class="service-area-map">
+                        <!-- Map integration here -->
+                    </div>
+                    <div class="service-areas">
+                        <h4>Areas Served:</h4>
+                        <ul>
+                            {{#each service_areas}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Business Hours -->
+                <div class="card">
+                    <h3>Business Hours</h3>
+                    <div class="hours-grid">
+                        {{#each business_hours}}
+                        <div class="hours-row">
+                            <span class="day">{{this.day}}</span>
+                            <span class="hours">{{this.hours}}</span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
