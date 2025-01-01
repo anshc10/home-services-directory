@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search verified home service providers. Filter by service type, location, availability, and ratings. Find emergency plumbers, electricians, HVAC experts near you.">
+    
+    <title>Find Local Service Providers | Home Services Search</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SearchResultsPage",
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "Service",
+                    "name": "Emergency Plumbing",
+                    "provider": {
+                        "@type": "LocalBusiness",
+                        "name": "LA Plumbing Company",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Torrance",
+                            "addressRegion": "CA"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Emergency Banner (same as index.html) -->
+    <div class="emergency-banner" role="alert">
+        <span>🚨 Emergency Services Available Now - Average Response Time: 23 Minutes</span>
+    </div>
+
+    <!-- Navigation (same as index.html) -->
+    <nav class="nav" role="navigation">
+        <!-- Same nav content -->
+    </nav>
+
+    <!-- Search Header -->
+    <div class="search-header">
+        <div class="container">
+            <div class="search-form">
+                <h1>Find Service Providers</h1>
+                <div class="search-inputs">
+                    <select class="select-input" aria-label="Service type">
+                        <option value="">All Services</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="hvac">HVAC</option>
+                        <option value="roofing">Roofing</option>
+                    </select>
+                    
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Enter ZIP code"
+                        aria-label="ZIP code"
+                    >
+                    
+                    <button class="btn btn-primary">Search</button>
+                </div>
+                
+                <div class="filter-toggles">
+                    <label class="checkbox">
+                        <input type="checkbox"> Available Now
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox"> Emergency Service
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox"> Top Rated (4.5+)
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+    <div class="container search-content">
+        <div class="search-grid">
+            <!-- Filters Sidebar -->
+            <aside class="filters">
+                <div class="card">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-section">
+                        <h4>Service Type</h4>
+                        <label class="checkbox">
+                            <input type="checkbox"> Plumbing
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox"> Electrical
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox"> HVAC
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox"> Roofing
+                        </label>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Availability</h4>
+                        <label class="radio">
+                            <input type="radio" name="availability"> Available Now
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="availability"> Within 1 Hour
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="availability"> Today
+                        </label>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Rating</h4>
+                        <label class="radio">
+                            <input type="radio" name="rating"> 4.5+ stars
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rating"> 4.0+ stars
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="rating"> All ratings
+                        </label>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Distance</h4>
+                        <label class="radio">
+                            <input type="radio" name="distance"> Within 5 miles
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="distance"> Within 10 miles
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="distance"> Within 20 miles
+                        </label>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Verification</h4>
+                        <label class="checkbox">
+                            <input type="checkbox"> Licensed
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox"> Insured
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox"> Background Checked
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Results Section -->
+            <main class="results">
+                <div class="results-header">
+                    <div class="results-count">15 providers found</div>
+                    <select class="sort-select" aria-label="Sort results">
+                        <option>Sort by: Recommended</option>
+                        <option>Response Time</option>
+                        <option>Rating</option>
+                        <option>Distance</option>
+                    </select>
+                </div>
+
+                <!-- Provider Cards -->
+                <div class="provider-cards">
+                    <article class="provider-card">
+                        <div class="provider-image">
+                            <img src="path/to/image.jpg" alt="LA Plumbing Company" width="100" height="100">
+                        </div>
+                        <div class="provider-info">
+                            <div class="status status-online">Available Now</div>
+                            <h2>LA Plumbing Company</h2>
+                            <p>Professional plumbing services in Torrance</p>
+                            <div class="provider-metrics">
+                                <span class="metric">⭐ 4.9 (114 reviews)</span>
+                                <span class="metric">🕒 23min response</span>
+                                <span class="metric">✓ Licensed & Insured</span>
+                            </div>
+                            <div class="service-tags">
+                                <span class="tag">Emergency Plumbing</span>
+                                <span class="tag">Water Heaters</span>
+                                <span class="tag">Drain Cleaning</span>
+                            </div>
+                        </div>
+                        <div class="provider-actions">
+                            <button class="btn btn-danger">Emergency Call</button>
+                            <button class="btn btn-primary">View Profile</button>
+                        </div>
+                    </article>
+                    <!-- More provider cards... -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="btn btn-outline" disabled>Previous</button>
+                    <div class="page-numbers">
+                        <button class="btn btn-primary">1</button>
+                        <button class="btn btn-outline">2</button>
+                        <button class="btn btn-outline">3</button>
+                    </div>
+                    <button class="btn btn-outline">Next</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>
