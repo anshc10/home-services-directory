@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find trusted local home service providers. 24/7 emergency services, verified professionals, and real-time availability for plumbing, electrical, HVAC and more.">
+    <meta name="keywords" content="home services, emergency plumber, local contractors, home repair, emergency services">
+    
+    <title>Home Services Directory | Find Verified Local Service Providers 24/7</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Home Services Directory",
+        "description": "Find trusted local home service providers with real-time availability",
+        "url": "https://your-domain.com",
+        "areaServed": "United States",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://your-domain.com/search?q={search_term}",
+            "query-input": "required name=search_term"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner" role="alert">
+        <span>🚨 Emergency Services Available Now - Average Response Time: 23 Minutes</span>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="nav" role="navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/" aria-label="Home">HomeServe</a>
+            </div>
+            
+            <div class="nav-search">
+                <form role="search" action="/search">
+                    <input 
+                        type="search" 
+                        class="search-bar" 
+                        placeholder="Search for services or providers..."
+                        aria-label="Search services"
+                    >
+                </form>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-danger" aria-label="Request emergency service">
+                    Emergency Service
+                </button>
+                <a href="/register" class="btn btn-primary">For Providers</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Trusted Home Service Providers</h1>
+            <p>Instant access to verified professionals 24/7</p>
+            
+            <!-- Quick Search Form -->
+            <form class="hero-search" action="/search">
+                <select class="select-input" aria-label="Select service type">
+                    <option value="">Select Service</option>
+                    <option value="plumbing">Plumbing</option>
+                    <option value="electrical">Electrical</option>
+                    <option value="hvac">HVAC</option>
+                    <option value="roofing">Roofing</option>
+                </select>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    placeholder="Enter ZIP code"
+                    aria-label="Enter ZIP code"
+                >
+                <button type="submit" class="btn btn-primary">Find Providers</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>Popular Services</h2>
+            <div class="category-grid">
+                <!-- Category Cards -->
+                <a href="/search?category=plumbing" class="category-card">
+                    <img src="icons/plumbing.svg" alt="Plumbing services" width="48" height="48">
+                    <h3>Plumbing</h3>
+                    <p>15 Available Providers</p>
+                </a>
+                
+                <a href="/search?category=electrical" class="category-card">
+                    <img src="icons/electrical.svg" alt="Electrical services" width="48" height="48">
+                    <h3>Electrical</h3>
+                    <p>12 Available Providers</p>
+                </a>
+
+                <a href="/search?category=hvac" class="category-card">
+                    <img src="icons/hvac.svg" alt="HVAC services" width="48" height="48">
+                    <h3>HVAC</h3>
+                    <p>8 Available Providers</p>
+                </a>
+
+                <a href="/search?category=roofing" class="category-card">
+                    <img src="icons/roofing.svg" alt="Roofing services" width="48" height="48">
+                    <h3>Roofing</h3>
+                    <p>10 Available Providers</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Services Section -->
+    <section class="emergency-services">
+        <div class="container">
+            <h2>24/7 Emergency Services</h2>
+            <div class="emergency-grid">
+                <div class="emergency-info">
+                    <h3>Immediate Response Available</h3>
+                    <ul class="emergency-features">
+                        <li>✓ Average 23 minute response time</li>
+                        <li>✓ Licensed & insured professionals</li>
+                        <li>✓ Upfront pricing</li>
+                        <li>✓ Service guarantee</li>
+                    </ul>
+                    <button class="btn btn-danger btn-lg">Call Emergency Service</button>
+                </div>
+                <div class="emergency-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">23</div>
+                        <div class="stat-label">Minute Avg. Response</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Available Pros</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Providers -->
+    <section class="providers">
+        <div class="container">
+            <h2>Top Rated Providers</h2>
+            <div class="provider-grid">
+                <!-- Provider Cards -->
+                <article class="provider-card">
+                    <div class="provider-image">
+                        <img src="path/to/image.jpg" alt="LA Plumbing Company" width="100" height="100">
+                    </div>
+                    <div class="provider-info">
+                        <div class="status status-online">Available Now</div>
+                        <h3>LA Plumbing Company</h3>
+                        <p>Professional plumbing services in Torrance</p>
+                        <div class="provider-metrics">
+                            <span class="metric">⭐ 4.9 (114 reviews)</span>
+                            <span class="metric">🕒 23min response</span>
+                            <span class="metric">✓ Licensed & Insured</span>
+                        </div>
+                    </div>
+                    <div class="provider-actions">
+                        <button class="btn btn-danger">Emergency Call</button>
+                        <button class="btn btn-primary">View Profile</button>
+                    </div>
+                </article>
+                <!-- More provider cards... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <img src="icons/verified.svg" alt="Verified icon" width="40" height="40">
+                    <h3>Verified Providers</h3>
+                    <p>All providers are licensed, insured, and background-checked</p>
+                </div>
+                <div class="trust-card">
+                    <img src="icons/clock.svg" alt="Clock icon" width="40" height="40">
+                    <h3>24/7 Availability</h3>
+                    <p>Emergency services available any time, day or night</p>
+                </div>
+                <div class="trust-card">
+                    <img src="icons/price.svg" alt="Price icon" width="40" height="40">
+                    <h3>Upfront Pricing</h3>
+                    <p>Clear pricing with no hidden fees or surprises</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/emergency">Emergency Services</a></li>
+                        <li><a href="/search">Find Providers</a></li>
+                        <li><a href="/register">Join as Provider</a></li>
+                        <li><a href="/about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/services/plumbing">Plumbing</a></li>
+                        <li><a href="/services/electrical">Electrical</a></li>
+                        <li><a href="/services/hvac">HVAC</a></li>
+                        <li><a href="/services/roofing">Roofing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Emergency: (800) 123-4567</li>
+                        <li>Email: support@example.com</li>
+                        <li>Hours: 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Home Services Directory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
