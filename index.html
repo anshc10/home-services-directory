@@ -1,248 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Essential Meta Tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find verified local home service providers. 24/7 emergency services, real-time availability for plumbing, electrical, HVAC and more.">
-    <meta name="keywords" content="home services, emergency plumber, local contractors, home repair, emergency services">
-    
-    <title>Home Services Directory | Find Local Service Providers 24/7</title>
+    <meta name="description" content="Learn about HomeServePro - Your trusted platform for finding verified home service professionals and emergency services.">
+    <title>About Us | HomeServePro</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Schema Markup for Local Business Directory -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "DirectoryPage",
-        "name": "Home Services Directory",
-        "description": "Find trusted local home service providers with real-time availability",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://yourdomain.com/search?q={search_term}",
-            "query-input": "required name=search_term"
-        }
-    }
-    </script>
 </head>
 <body>
-    <!-- Emergency Banner - Always visible for quick access -->
+    <!-- Emergency Banner -->
     <div class="emergency-banner" role="alert">
         <span>🚨 Emergency Services Available 24/7 - Fast Response Times</span>
     </div>
 
-    <!-- Main Navigation -->
+    <!-- Navigation -->
     <nav class="nav" role="navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="/" aria-label="Home">
-                    HomeServe<span class="logo-highlight">Pro</span>
-                </a>
+                <a href="index.html">HomeServePro</a>
             </div>
             
-            <!-- Quick Search in Navigation -->
             <div class="nav-search">
-                <form role="search" action="/search" method="GET">
-                    <input 
-                        type="search" 
-                        name="q"
-                        class="search-bar" 
-                        placeholder="Search for services or providers..."
-                        aria-label="Search services"
-                    >
-                </form>
+                <input type="search" class="search-bar" placeholder="Search for services or providers...">
             </div>
 
             <div class="nav-actions">
-                <button class="btn btn-danger" aria-label="Request emergency service">
-                    Emergency Service
-                </button>
-                <a href="/register" class="btn btn-primary">List Your Business</a>
+                <a href="emergency-service.html" class="btn btn-danger">Emergency Service</a>
+                <a href="05-register.html" class="btn btn-primary">List Your Business</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Main Search -->
+    <!-- About Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Find Trusted Home Service Professionals</h1>
-            <p>Connect with verified experts 24/7 - Emergency & Regular Services</p>
+            <h1>About HomeServePro</h1>
+            <p>Connecting homeowners with trusted service professionals since 2024</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>HomeServePro is dedicated to revolutionizing how homeowners find and connect with home service professionals. We prioritize emergency response times, verified credentials, and transparent pricing to ensure you get the help you need, when you need it.</p>
             
-            <!-- Main Search Form -->
-            <form class="hero-search" action="/search" method="GET">
-                <div class="search-group">
-                    <select name="service" class="select-input" required>
-                        <option value="">Select Service Type</option>
-                        <option value="plumbing">Plumbing</option>
-                        <option value="electrical">Electrical</option>
-                        <option value="hvac">HVAC</option>
-                        <option value="roofing">Roofing</option>
-                        <option value="landscaping">Landscaping</option>
-                        <option value="cleaning">Cleaning</option>
-                    </select>
-                    
-                    <input 
-                        type="text" 
-                        name="zip"
-                        class="search-input" 
-                        placeholder="Enter ZIP code"
-                        pattern="[0-9]{5}"
-                        required
-                    >
-                    
-                    <button type="submit" class="btn btn-primary btn-lg">
-                        Find Providers
-                    </button>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Verified Providers</div>
                 </div>
-                
-                <div class="search-options">
-                    <label class="checkbox">
-                        <input type="checkbox" name="emergency"> 
-                        Emergency Service
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" name="available_now"> 
-                        Available Now
-                    </label>
+                <div class="stat-card">
+                    <div class="stat-value">23min</div>
+                    <div class="stat-label">Avg. Response Time</div>
                 </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Emergency Services Section -->
-    <section class="emergency-services">
-        <div class="container">
-            <div class="section-header">
-                <h2>24/7 Emergency Services</h2>
-                <p>Immediate response for urgent home service needs</p>
-            </div>
-            
-            <div class="emergency-grid">
-                <!-- Emergency Service Types -->
-                <div class="emergency-types">
-                    <div class="emergency-card">
-                        <div class="emergency-icon">🚰</div>
-                        <h3>Emergency Plumbing</h3>
-                        <p>Response within 30 mins</p>
-                        <a href="/search?type=plumbing&emergency=true" class="btn btn-outline">Find Plumber</a>
-                    </div>
-
-                    <div class="emergency-card">
-                        <div class="emergency-icon">⚡</div>
-                        <h3>Emergency Electrical</h3>
-                        <p>Licensed electricians 24/7</p>
-                        <a href="/search?type=electrical&emergency=true" class="btn btn-outline">Find Electrician</a>
-                    </div>
-
-                    <div class="emergency-card">
-                        <div class="emergency-icon">❄️</div>
-                        <h3>Emergency HVAC</h3>
-                        <p>Fast heating & cooling fixes</p>
-                        <a href="/search?type=hvac&emergency=true" class="btn btn-outline">Find HVAC Tech</a>
-                    </div>
-                </div>
-
-                <!-- Emergency Stats -->
-                <div class="emergency-stats">
-                    <div class="stat-card">
-                        <div class="stat-value">23</div>
-                        <div class="stat-label">Minute Average Response</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">100+</div>
-                        <div class="stat-label">Emergency Providers</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">24/7</div>
-                        <div class="stat-label">Service Availability</div>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Availability</div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Featured Categories -->
-    <section class="categories">
-        <div class="container">
-            <div class="section-header">
-                <h2>Browse Service Categories</h2>
-                <p>Find the right professional for any home service</p>
-            </div>
-
-            <div class="category-grid">
-                <!-- Each category card is a link to category-specific search -->
-                <a href="/search?category=plumbing" class="category-card">
-                    <div class="category-icon">🚰</div>
-                    <h3>Plumbing</h3>
-                    <p>15 Available Providers</p>
-                    <div class="category-meta">
-                        <span class="response-time">~23 min response</span>
-                        <span class="arrow">→</span>
-                    </div>
-                </a>
-
-                <!-- More category cards... -->
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>How It Works</h2>
-                <p>Quick and easy way to find reliable service providers</p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Search Service</h3>
-                    <p>Choose service type and enter your location</p>
+        <section class="about-section">
+            <h2>Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Verified Professionals</h3>
+                    <p>Every service provider is thoroughly vetted, licensed, and insured.</p>
                 </div>
-                
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3>Compare Providers</h3>
-                    <p>View ratings, response times, and availability</p>
+                <div class="feature-card">
+                    <h3>Emergency Response</h3>
+                    <p>24/7 availability with real-time tracking and fast response times.</p>
                 </div>
-                
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Book Instantly</h3>
-                    <p>Schedule service or request emergency help</p>
+                <div class="feature-card">
+                    <h3>Transparent Pricing</h3>
+                    <p>Clear upfront pricing with no hidden fees or surprises.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Commitment</h2>
+            <div class="commitment-grid">
+                <div class="commitment-item">
+                    <h3>Quality Service</h3>
+                    <p>We partner only with the best service providers who maintain high standards of workmanship.</p>
+                </div>
+                <div class="commitment-item">
+                    <h3>Customer Safety</h3>
+                    <p>All professionals undergo background checks and maintain proper insurance coverage.</p>
+                </div>
+                <div class="commitment-item">
+                    <h3>Fair Pricing</h3>
+                    <p>We ensure competitive rates and transparent pricing for all services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Join Our Network</h2>
+            <p>Are you a qualified home service professional? Join our network to grow your business and connect with customers in your area.</p>
+            <div class="cta-buttons">
+                <a href="05-register.html" class="btn btn-primary">Register Your Business</a>
+                <a href="emergency-service.html" class="btn btn-danger">Offer Emergency Services</a>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Quick Links -->
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/emergency">Emergency Services</a></li>
-                        <li><a href="/search">Find Providers</a></li>
-                        <li><a href="/register">Join as Provider</a></li>
-                        <li><a href="/about">About Us</a></li>
+                        <li><a href="emergency-service.html">Emergency Services</a></li>
+                        <li><a href="search.html">Find Providers</a></li>
+                        <li><a href="05-register.html">Join as Provider</a></li>
+                        <li><a href="about.html">About Us</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="/search?type=plumbing">Plumbing</a></li>
-                        <li><a href="/search?type=electrical">Electrical</a></li>
-                        <li><a href="/search?type=hvac">HVAC</a></li>
-                        <li><a href="/search?type=roofing">Roofing</a></li>
+                        <li><a href="search.html?type=plumbing">Plumbing</a></li>
+                        <li><a href="search.html?type=electrical">Electrical</a></li>
+                        <li><a href="search.html?type=hvac">HVAC</a></li>
+                        <li><a href="search.html?type=roofing">Roofing</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <ul>
