@@ -3,29 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find verified local home service providers. 24/7 emergency services, real-time availability for plumbing, electrical, HVAC and more.">
-    <title>HomeServePro | Find Local Service Providers 24/7</title>
+    <title>HomeServePro | Professional Home Services Directory</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Emergency Banner -->
     <div class="emergency-banner">
-        <span>🚨 Emergency Services Available 24/7 - Fast Response Times</span>
+        <div class="container">
+            <span class="emergency-icon">🚨</span>
+            <span class="emergency-text">24/7 Emergency Services Available - Average Response Time: 23 Minutes</span>
+            <a href="tel:800-123-4567" class="emergency-phone">Call Now: (800) 123-4567</a>
+        </div>
     </div>
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
+        <div class="container nav-container">
             <div class="nav-logo">
-                <a href="index.html">HomeServePro</a>
+                <a href="index.html">HomeServe<span class="logo-highlight">Pro</span></a>
             </div>
             
             <div class="nav-search">
-                <input type="search" class="search-bar" placeholder="Search for services...">
+                <form class="search-form">
+                    <input type="search" class="search-input" placeholder="Search for services...">
+                    <button type="submit" class="search-button">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </form>
             </div>
 
             <div class="nav-actions">
-                <a href="emergency-service.html" class="btn btn-danger">Emergency Service</a>
+                <a href="emergency-service.html" class="btn btn-danger">
+                    <span class="btn-icon">🚨</span>
+                    Emergency Service
+                </a>
                 <a href="05-register.html" class="btn btn-primary">List Your Business</a>
             </div>
         </div>
@@ -33,78 +46,129 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Find Trusted Home Service Professionals</h1>
-            <p>Connect with verified experts 24/7 - Emergency & Regular Services</p>
-            
-            <!-- Search Form -->
-            <form class="hero-search">
-                <select class="select-input">
-                    <option value="">Select Service Type</option>
-                    <option>Plumbing</option>
-                    <option>Electrical</option>
-                    <option>HVAC</option>
-                    <option>Roofing</option>
-                </select>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Trusted Home Service Professionals</h1>
+                <p>Connect with verified experts 24/7 for emergency and routine services</p>
                 
-                <input type="text" class="search-input" placeholder="Enter ZIP code">
-                <button class="btn btn-primary btn-lg">Find Providers</button>
-            </form>
-
-            <div class="search-options">
-                <label class="checkbox">
-                    <input type="checkbox"> Emergency Service
-                </label>
-                <label class="checkbox">
-                    <input type="checkbox"> Available Now
-                </label>
+                <div class="hero-search-container">
+                    <form class="hero-search">
+                        <div class="search-group">
+                            <select class="select-input" required>
+                                <option value="">Select Service Type</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="hvac">HVAC</option>
+                                <option value="roofing">Roofing</option>
+                            </select>
+                            
+                            <input type="text" class="search-input" placeholder="Enter ZIP code" required>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Find Providers
+                            </button>
+                        </div>
+                        
+                        <div class="search-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkbox-text">Emergency Service</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span class="checkbox-text">Available Now</span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Services -->
-    <section class="emergency-services">
+    <!-- Quick Stats Section -->
+    <section class="quick-stats">
         <div class="container">
-            <h2>24/7 Emergency Services</h2>
-            <div class="emergency-grid">
-                <!-- Plumbing -->
-                <div class="emergency-card">
-                    <div class="service-icon">🚰</div>
-                    <h3>Emergency Plumbing</h3>
-                    <p>Response within 30 mins</p>
-                    <a href="search.html?type=plumbing" class="btn btn-outline">Find Plumber</a>
-                </div>
-
-                <!-- Electrical -->
-                <div class="emergency-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Emergency Electrical</h3>
-                    <p>Licensed electricians 24/7</p>
-                    <a href="search.html?type=electrical" class="btn btn-outline">Find Electrician</a>
-                </div>
-
-                <!-- HVAC -->
-                <div class="emergency-card">
-                    <div class="service-icon">❄️</div>
-                    <h3>Emergency HVAC</h3>
-                    <p>Fast heating & cooling fixes</p>
-                    <a href="search.html?type=hvac" class="btn btn-outline">Find HVAC Tech</a>
-                </div>
-            </div>
-
-            <!-- Stats -->
             <div class="stats-grid">
                 <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
                     <div class="stat-value">23</div>
-                    <div class="stat-label">Minute Average Response</div>
+                    <div class="stat-label">Minute Response</div>
                 </div>
                 <div class="stat-card">
+                    <div class="stat-icon">👥</div>
                     <div class="stat-value">100+</div>
-                    <div class="stat-label">Emergency Providers</div>
+                    <div class="stat-label">Verified Providers</div>
                 </div>
                 <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-value">4.8</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
                     <div class="stat-value">24/7</div>
-                    <div class="stat-label">Service Availability</div>
+                    <div class="stat-label">Service Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Services Section -->
+    <section class="emergency-services">
+        <div class="container">
+            <div class="section-header">
+                <h2>24/7 Emergency Services</h2>
+                <p>Immediate response for urgent home service needs</p>
+            </div>
+
+            <div class="emergency-grid">
+                <!-- Emergency Service Cards -->
+                <div class="emergency-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🚰</div>
+                    </div>
+                    <h3>Emergency Plumbing</h3>
+                    <ul class="service-features">
+                        <li>Burst Pipes</li>
+                        <li>Major Leaks</li>
+                        <li>Drain Issues</li>
+                    </ul>
+                    <p class="response-time">Response within 30 mins</p>
+                    <a href="search.html?service=plumbing&emergency=true" class="btn btn-danger btn-block">
+                        Find Emergency Plumber
+                    </a>
+                </div>
+
+                <div class="emergency-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">⚡</div>
+                    </div>
+                    <h3>Emergency Electrical</h3>
+                    <ul class="service-features">
+                        <li>Power Outages</li>
+                        <li>Circuit Issues</li>
+                        <li>Safety Hazards</li>
+                    </ul>
+                    <p class="response-time">Licensed experts 24/7</p>
+                    <a href="search.html?service=electrical&emergency=true" class="btn btn-danger btn-block">
+                        Find Emergency Electrician
+                    </a>
+                </div>
+
+                <div class="emergency-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">❄️</div>
+                    </div>
+                    <h3>Emergency HVAC</h3>
+                    <ul class="service-features">
+                        <li>No Heat/AC</li>
+                        <li>System Failures</li>
+                        <li>Urgent Repairs</li>
+                    </ul>
+                    <p class="response-time">Fast response guaranteed</p>
+                    <a href="search.html?service=hvac&emergency=true" class="btn btn-danger btn-block">
+                        Find Emergency HVAC Tech
+                    </a>
                 </div>
             </div>
         </div>
@@ -113,22 +177,28 @@
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="container">
-            <h2>How It Works</h2>
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Quick and easy way to find reliable service providers</p>
+            </div>
+
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Search Service</h3>
-                    <p>Choose service type and enter location</p>
+                    <h3>Select Service</h3>
+                    <p>Choose service type and enter your location</p>
                 </div>
+                
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h3>Compare Providers</h3>
-                    <p>View ratings and response times</p>
+                    <p>View ratings, response times, and availability</p>
                 </div>
+                
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Book Instantly</h3>
-                    <p>Schedule service or request emergency</p>
+                    <h3>Quick Booking</h3>
+                    <p>Schedule service or request emergency help</p>
                 </div>
             </div>
         </div>
@@ -137,36 +207,69 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="emergency-service.html">Emergency Services</a></li>
-                        <li><a href="search.html">Find Providers</a></li>
-                        <li><a href="05-register.html">Join as Provider</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                    </ul>
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <h3>HomeServePro</h3>
+                            <p>Your trusted platform for professional home services</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href="#" class="social-link">Facebook</a>
+                            <a href="#" class="social-link">Twitter</a>
+                            <a href="#" class="social-link">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="emergency-service.html">Emergency Services</a></li>
+                            <li><a href="search.html">Find Providers</a></li>
+                            <li><a href="05-register.html">Join as Provider</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="search.html?type=plumbing">Plumbing Services</a></li>
+                            <li><a href="search.html?type=electrical">Electrical Services</a></li>
+                            <li><a href="search.html?type=hvac">HVAC Services</a></li>
+                            <li><a href="search.html?type=roofing">Roofing Services</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <strong>Emergency:</strong>
+                                <a href="tel:800-123-4567">(800) 123-4567</a>
+                            </li>
+                            <li>
+                                <strong>Email:</strong>
+                                <a href="mailto:support@homeservepro.com">support@homeservepro.com</a>
+                            </li>
+                            <li>
+                                <strong>Hours:</strong>
+                                Available 24/7
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="search.html?type=plumbing">Plumbing</a></li>
-                        <li><a href="search.html?type=electrical">Electrical</a></li>
-                        <li><a href="search.html?type=hvac">HVAC</a></li>
-                        <li><a href="search.html?type=roofing">Roofing</a></li>
-                    </ul>
+
+                <div class="footer-bottom">
+                    <div class="footer-info">
+                        <p>&copy; 2024 HomeServePro. All rights reserved.</p>
+                        <div class="footer-legal">
+                            <a href="privacy.html">Privacy Policy</a>
+                            <a href="terms.html">Terms of Service</a>
+                            <a href="sitemap.html">Sitemap</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>Emergency: (800) 123-4567</li>
-                        <li>Email: support@domain.com</li>
-                        <li>Available: 24/7</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 HomeServePro. All rights reserved.</p>
             </div>
         </div>
     </footer>
