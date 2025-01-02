@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Dashboard | HomeServePro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-layout">
+    <!-- Dashboard Navigation -->
+    <nav class="dashboard-nav">
+        <div class="dashboard-logo">
+            <h1>HomeServePro</h1>
+        </div>
+        <div class="nav-items">
+            <a href="#overview" class="nav-item active">Overview</a>
+            <a href="#bookings" class="nav-item">Bookings</a>
+            <a href="#availability" class="nav-item">Availability</a>
+            <a href="#profile" class="nav-item">Profile</a>
+            <a href="#reviews" class="nav-item">Reviews</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h2>Dashboard</h2>
+                <div class="header-actions">
+                    <div class="availability-toggle">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        Available for Emergency
+                    </div>
+                    <button class="btn btn-outline">View Public Profile</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Overview -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">23</div>
+                <div class="stat-label">New Requests</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">4.9</div>
+                <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">15min</div>
+                <div class="stat-label">Avg Response</div>
+            </div>
+        </div>
+
+        <!-- Recent Bookings -->
+        <section class="dashboard-section">
+            <h3>Recent Bookings</h3>
+            <div class="bookings-list">
+                <!-- Booking Card -->
+                <div class="booking-card">
+                    <div class="booking-status emergency">Emergency</div>
+                    <div class="booking-details">
+                        <h4>Water Heater Repair</h4>
+                        <p>John Doe - 123 Main St</p>
+                        <span class="time">30 minutes ago</span>
+                    </div>
+                    <div class="booking-actions">
+                        <button class="btn btn-primary">Accept</button>
+                        <button class="btn btn-outline">Decline</button>
+                    </div>
+                </div>
+                <!-- More booking cards -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
