@@ -84,158 +84,70 @@ body {
     gap: 1rem;
 }
 
-/* Hero Section */
-.hero {
-    background: var(--primary);
+/* Footer Styles */
+.footer {
+    background-color: #1E293B; /* Dark background for footer */
     color: white;
-    padding: 4rem 1rem;
-    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    opacity: 0.9;
-    margin-bottom: 2rem;
-}
-
-/* Search Form */
-.hero-search {
-    display: flex;
-    gap: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.select-input,
-.search-input {
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    min-width: 200px;
-}
-
-.search-options {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 1rem;
-    color: white;
-}
-
-/* Buttons */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: white;
-}
-
-.btn-danger {
-    background: var(--danger);
-    color: white;
-}
-
-.btn-outline {
-    border: 2px solid var(--border);
-    background: white;
-    color: var(--text);
-}
-
-.btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-}
-
-/* Registration Page Styles */
-.registration-layout {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-}
-
-.progress-bar {
+.footer .container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
-    padding: 2rem 0;
+    flex-wrap: wrap; /* Ensure responsiveness */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.progress-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.footer-section {
     flex: 1;
-    position: relative;
+    min-width: 200px; /* Minimum width of each footer section */
+    margin-right: 20px; /* Spacing between sections */
 }
 
-.step-number {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.5rem;
+.footer-section h4 {
+    margin-bottom: 10px;
 }
 
-.progress-step.active .step-number {
-    background: var(--primary);
+.footer-section ul {
+    list-style-type: none; /* Remove bullets from list */
+    padding: 0;
+}
+
+.footer-section li + li {
+    margin-top: 5px; /* Spacing between list items */
+}
+
+.footer-section a {
     color: white;
+    text-decoration: none; /* No underline */
 }
 
-.form-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-md);
+.footer-section a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
-.form-header {
+.footer-bottom {
     text-align: center;
-    margin-bottom: 2rem;
+    width: 100%;
+    margin-top: 20px; /* Space between sections and copyright */
 }
 
-.form-section {
-    margin-bottom: 2rem;
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column; /* Stack the sections on small screens */
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-right: 0;
+        margin-bottom: 20px; /* Space between stacked sections */
+    }
+
+    .footer-bottom {
+        order: 99; /* Ensures it is always at the bottom */
+    }
 }
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display:block;
-    margin-bottom: 0.5rem;
-   
-
 
