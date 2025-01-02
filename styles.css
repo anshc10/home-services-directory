@@ -321,47 +321,53 @@ body {
 }
    /* Footer Styles */
 .footer {
-    background-color: var(--text); /* Ensure this is a defined variable for color */
+    background-color: #1E293B; /* Dark blue background */
     color: white;
     text-align: center;
-    padding: 20px 10px; /* Adjusted padding for better spacing */
-    width: 100%;
-    clear: both; /* Clears the float, if any elements are floated */
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
 }
 
 .footer ul {
-    list-style-type: none; /* Removes bullets */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
-    display: flex; /* Flex container for inline layout */
-    justify-content: center; /* Centers items horizontally */
-    align-items: center; /* Aligns items vertically */
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .footer li {
-    margin: 5px 15px; /* Provides spacing around each list item */
+    margin-bottom: 5px;
 }
 
 .footer a {
     color: white;
-    text-decoration: none; /* Removes underline */
-    font-weight: bold; /* Optional: adds boldness to anchor text */
+    text-decoration: none;
 }
 
 .footer a:hover {
-    text-decoration: underline; /* Underline on hover for clarity */
+    text-decoration: underline;
 }
 
-/* Responsive Footer Adjustment */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
 @media (max-width: 768px) {
-    .footer ul {
-        flex-direction: column; /* Stacks links vertically on smaller screens */
+    .footer .container {
+        grid-template-columns: 1fr; /* Stacks the columns vertically on smaller screens */
     }
-
-    .footer li {
-        margin: 10px 0; /* Adjusts margin for vertical layout */
-    }
-
 }
 
