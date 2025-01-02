@@ -482,6 +482,113 @@ body {
     .footer-legal {
         justify-content: center;
     }
+    /* Emergency Service Page */
+.emergency-header {
+    background: var(--danger);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.emergency-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.response-time {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.emergency-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: var(--danger);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.emergency-cta:hover {
+    transform: scale(1.05);
+}
+
+.emergency-services-list {
+    padding: 4rem 0;
+}
+
+.emergency-service-section {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-header .service-icon {
+    font-size: 2rem;
+    background: var(--primary);
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.emergency-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.emergency-features li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.emergency-features li::before {
+    content: '✓';
+    color: var(--success);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.service-action {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.response-text {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .emergency-header h1 {
+        font-size: 2rem;
+    }
+    
+    .emergency-service-section {
+        padding: 1.5rem;
+    }
 }
 
 /* Animations */
