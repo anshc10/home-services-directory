@@ -321,7 +321,7 @@ body {
 }
    /* Footer Styles */
 .footer {
-    background-color: #1E293B; /* Dark blue background */
+    background-color: #1E293B; /* Ensuring a dark blue background */
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -330,7 +330,7 @@ body {
 
 .footer .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-template-columns: repeat(3, 1fr); /* Three columns on wider screens */
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -353,11 +353,11 @@ body {
 
 .footer a {
     color: white;
-    text-decoration: none;
+    text-decoration: none; /* Removes underline by default */
 }
 
 .footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Adds underline on hover */
 }
 
 .footer-bottom {
@@ -367,7 +367,7 @@ body {
 
 @media (max-width: 768px) {
     .footer .container {
-        grid-template-columns: 1fr; /* Stacks the columns vertically on smaller screens */
+        grid-template-columns: 1fr; /* Stacks columns vertically on smaller screens */
     }
 }
 
