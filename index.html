@@ -10,7 +10,7 @@
 <body>
     <!-- Emergency Banner -->
     <div class="emergency-banner">
-        🚨 Emergency Services Available 24/7 - Fast Response Times
+        <span>🚨 Emergency Services Available 24/7 - Fast Response Times</span>
     </div>
 
     <!-- Navigation -->
@@ -50,6 +50,15 @@
                 <input type="text" class="search-input" placeholder="Enter ZIP code">
                 <button class="btn btn-primary btn-lg">Find Providers</button>
             </form>
+
+            <div class="search-options">
+                <label class="checkbox">
+                    <input type="checkbox"> Emergency Service
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Available Now
+                </label>
+            </div>
         </div>
     </section>
 
@@ -79,7 +88,23 @@
                     <div class="service-icon">❄️</div>
                     <h3>Emergency HVAC</h3>
                     <p>Fast heating & cooling fixes</p>
-                    <a href="search.html?type=hvac" the="btn btn-outline">Find HVAC Tech</a>
+                    <a href="search.html?type=hvac" class="btn btn-outline">Find HVAC Tech</a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">23</div>
+                    <div class="stat-label">Minute Average Response</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Emergency Providers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Service Availability</div>
                 </div>
             </div>
         </div>
@@ -145,40 +170,5 @@
             </div>
         </div>
     </footer>
-
-    <!-- Geolocation Script -->
-    <script>
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                alert("Geolocation is not supported by this browser.");
-            }
-        }
-
-        function showPosition(position) {
-            alert('Latitude: ' + position.coords.latitude + 
-                  '\nLongitude: ' + position.coords.longitude);
-        }
-
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    alert("User denied the request for Geolocation.");
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("Location information is unavailable.");
-                    break;
-                case error.TIMEOUT:
-                    alert("The request to get user location timed out.");
-                    break;
-                default:
-                    alert("An unknown error occurred.");
-                    break;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', getLocation);
-    </script>
 </body>
 </html>
