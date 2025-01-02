@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | HomeServePro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        🚨 Emergency Services Available 24/7 - Fast Response Times
+    </div>
+
+    <!-- Navigation (same as home) -->
+
+    <!-- Search Header -->
+    <div class="search-controls">
+        <div class="container">
+            <div class="search-bar-container">
+                <input type="text" placeholder="Service or location..." class="search-input">
+                <button class="btn btn-primary">Search</button>
+            </div>
+            <div class="filter-options">
+                <select class="filter-select">
+                    <option>All Services</option>
+                    <option>Plumbing</option>
+                    <option>Electrical</option>
+                    <option>HVAC</option>
+                </select>
+                <select class="filter-select">
+                    <option>Sort by: Recommended</option>
+                    <option>Response Time</option>
+                    <option>Rating</option>
+                    <option>Distance</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Grid -->
+    <div class="container results-layout">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <div class="filter-card">
+                <h3>Filters</h3>
+                <div class="filter-section">
+                    <h4>Availability</h4>
+                    <label class="checkbox">
+                        <input type="checkbox"> Available Now
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox"> Emergency Service
+                    </label>
+                </div>
+                <!-- More filter sections -->
+            </div>
+        </aside>
+
+        <!-- Results List -->
+        <main class="results-list">
+            <!-- Provider Card -->
+            <div class="provider-card">
+                <div class="provider-image">
+                    <img src="placeholder.jpg" alt="Provider">
+                    <span class="status-badge">Available Now</span>
+                </div>
+                <div class="provider-info">
+                    <h3>Professional Plumbing Co</h3>
+                    <div class="rating">⭐ 4.9 (120 reviews)</div>
+                    <p>Emergency plumbing, repairs, installations</p>
+                    <div class="response-time">🕒 23min response time</div>
+                </div>
+                <div class="provider-actions">
+                    <button class="btn btn-danger">Emergency Call</button>
+                    <button class="btn btn-outline">View Profile</button>
+                </div>
+            </div>
+            <!-- More provider cards -->
+        </main>
+    </div>
+</body>
+</html>
