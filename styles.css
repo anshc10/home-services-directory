@@ -32,13 +32,11 @@ body {
 
 /* Emergency Banner */
 .emergency-banner {
-    .emergency-banner {
-    background-color: var(--danger-color); /* Red background */
+    background-color: var(--danger);
     color: white;
     text-align: center;
     padding: 10px 0;
     font-weight: bold;
-}
 }
 
 /* Navigation */
@@ -236,7 +234,7 @@ body {
 }
 
 .form-group label {
-    display: block;
+    display:block;
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
