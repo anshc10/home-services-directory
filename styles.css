@@ -117,7 +117,8 @@ body {
     margin: 0 auto;
 }
 
-.select-input, .search-input {
+.select-input,
+.search-input {
     padding: 0.75rem 1rem;
     border: none;
     border-radius: 0.5rem;
@@ -319,4 +320,58 @@ body {
         gap: 1rem;
     }
 }
+
+/* Footer Styles */
+.footer {
+    background-color: #1E293B; /* Dark blue background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer li {
+    margin-bottom: 5px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer .container {
+        grid-template-columns: 1fr; /* Stacks the columns vertically on smaller screens */
+    }
+}
+
+This should help isolate and fix the footer styling while maintaining the layout and functionality of other page elements. If this still doesn't resolve the issue, it may be necessary to inspect other conflicting styles or structural HTML issues.
 
