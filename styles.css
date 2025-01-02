@@ -1,9 +1,10 @@
-/* Root Variables */
+/* Variables & Reset */
 :root {
     --primary: #4764E6;
     --primary-dark: #3551CF;
     --danger: #DC2626;
     --danger-dark: #B91C1C;
+    --success: #16a34a;
     --background: #F8FAFC;
     --text: #1E293B;
     --text-light: #64748B;
@@ -15,7 +16,6 @@
     --transition: all 0.3s ease;
 }
 
-/* Base Reset */
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +35,54 @@ body {
     padding: 0 1.5rem;
 }
 
-/* Emergency Banner */
+/* Global Components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: var(--danger-dark);
+}
+
+.btn-outline {
+    border: 2px solid var(--border);
+    background: white;
+    color: var(--text);
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* Top Emergency Banner */
 .emergency-banner {
     background: var(--danger);
     color: white;
@@ -106,6 +153,12 @@ body {
     margin: 0 2rem;
 }
 
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Search Components */
 .search-form {
     display: flex;
     gap: 0.5rem;
@@ -123,20 +176,6 @@ body {
 .search-input:focus {
     border-color: var(--primary);
     outline: none;
-}
-
-.search-button {
-    padding: 0.75rem;
-    border: none;
-    border-radius: 0.5rem;
-    background: var(--primary);
-    color: white;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.search-button:hover {
-    background: var(--primary-dark);
 }
 
 /* Hero Section */
@@ -179,6 +218,7 @@ body {
     margin-bottom: 2.5rem;
 }
 
+/* Hero Search */
 .hero-search-container {
     background: rgba(255,255,255,0.1);
     padding: 2rem;
@@ -206,91 +246,46 @@ body {
     min-width: 200px;
 }
 
-.search-options {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-}
-
-/* Quick Stats Section */
-.quick-stats {
-    margin-top: -4rem;
-    position: relative;
-    z-index: 2;
-    padding: 0 1rem;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.stat-card {
-    background: var(--card);
-    padding: 1.5rem;
-    border-radius: 1rem;
+/* Emergency Service Page */
+.emergency-header {
+    background: var(--danger);
+    color: white;
+    padding: 4rem 0;
     text-align: center;
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
 }
 
-.stat-card:hover {
-    transform: translateY(-5px);
-}
-
-.stat-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.stat-value {
+.emergency-header h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-/* Emergency Services Section */
-.emergency-services {
-    padding: 6rem 0;
-    background: linear-gradient(to bottom, var(--background), white);
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    color: var(--text);
     margin-bottom: 1rem;
 }
 
-.section-header p {
-    color: var(--text-light);
-    font-size: 1.125rem;
+.response-time {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
 }
 
-.emergency-grid {
+.emergency-call-btn {
+    display: inline-block;
+    background: white;
+    color: var(--danger);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.emergency-call-btn:hover {
+    transform: scale(1.05);
+}
+
+.emergency-services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    padding: 4rem 0;
 }
 
 .emergency-card {
@@ -300,7 +295,6 @@ body {
     text-align: center;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
-    border: 1px solid var(--border);
 }
 
 .emergency-card:hover {
@@ -308,7 +302,7 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-.service-icon-wrapper {
+.service-icon {
     width: 80px;
     height: 80px;
     margin: 0 auto 1.5rem;
@@ -317,27 +311,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.service-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: white;
 }
 
-.service-features {
+.service-list {
     list-style: none;
     margin: 1.5rem 0;
 }
 
-.service-features li {
-    margin: 0.5rem 0;
-    color: var(--text-light);
+.service-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-.response-time {
-    font-weight: 600;
-    color: var(--primary);
-    margin: 1rem 0;
+.service-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+}
+
+.service-note {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
 }
 
 /* Footer */
@@ -365,96 +363,32 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.footer-brand h3 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.footer-brand p {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-link {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    color: var(--primary);
-}
-
-.footer-links {
+.footer-section ul {
     list-style: none;
 }
 
-.footer-links li {
+.footer-section li {
     margin-bottom: 0.75rem;
 }
 
-.footer-links a {
+.footer-section a {
     color: var(--text-light);
     text-decoration: none;
     transition: var(--transition);
 }
 
-.footer-links a:hover {
+.footer-section a:hover {
     color: var(--primary);
 }
 
-.footer-contact li {
-    margin-bottom: 1rem;
-    color: var(--text-light);
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
-.footer-contact strong {
-    color: var(--text);
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-.footer-contact a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.footer-bottom {
-    border-top: 1px solid var(--border);
-    padding-top: 2rem;
-    margin-top: 2rem;
-}
-
-.footer-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.footer-legal {
-    display: flex;
-    gap: 2rem;
-}
-
-.footer-legal a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.footer-legal a:hover {
-    color: var(--primary);
-}
-
-/* Responsive Design */
+/* Media Queries */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -474,105 +408,20 @@ body {
         max-width: 100%;
     }
     
+    .emergency-services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-header h1 {
+        font-size: 2rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .footer-info {
         flex-direction: column;
         text-align: center;
     }
-    
-    .footer-legal {
-        justify-content: center;
-    }
- /* Emergency Service Page Styles */
-.emergency-header {
-    background: var(--danger);
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.emergency-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.response-time {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.emergency-call-btn {
-    display: inline-block;
-    background: white;
-    color: var(--danger);
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-size: 1.25rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: transform 0.2s;
-}
-
-.emergency-call-btn:hover {
-    transform: scale(1.05);
-}
-
-.emergency-services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 4rem 0;
-}
-
-.service-list {
-    list-style: none;
-    margin: 1.5rem 0;
-}
-
-.service-list li {
-    padding: 0.5rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.service-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--success);
-}
-
-.service-note {
-    color: var(--text-light);
-    margin-bottom: 1rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .emergency-services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .emergency-header h1 {
-        font-size: 2rem;
-    }
-}
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .emergency-header h1 {
-        font-size: 2rem;
-    }
-    
-    .emergency-service-section {
-        padding: 1.5rem;
-    
-}
-
-/* Animations */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
 }
