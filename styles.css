@@ -511,4 +511,66 @@ body {
         grid-template-columns: 1fr;
     }
 
+    /* Search Results Page Styles */
+.search-controls {
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.results-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+/* Dashboard Styles */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+.dashboard-nav {
+    background: var(--primary);
+    color: white;
+    padding: 1.5rem;
+}
+
+.dashboard-main {
+    padding: 2rem;
+    background: var(--background);
+}
+
+.dashboard-header {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.booking-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+/* Add more styles as needed */
+
 }
