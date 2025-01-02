@@ -32,11 +32,13 @@ body {
 
 /* Emergency Banner */
 .emergency-banner {
-    background: var(--danger);
+    .emergency-banner {
+    background-color: var(--danger-color); /* Red background */
     color: white;
-    padding: 0.75rem;
     text-align: center;
-    font-weight: 500;
+    padding: 10px 0;
+    font-weight: bold;
+}
 }
 
 /* Navigation */
