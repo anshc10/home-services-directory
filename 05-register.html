@@ -1,147 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Your Business | HomeServePro</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Emergency Banner -->
-    <div class="emergency-banner">
-        <span>🚨 Emergency Services Available 24/7 - Fast Response Times</span>
-    </div>
+/* Registration Form */
+.registration-header {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">HomeServePro</a>
-            </div>
-            <div class="nav-actions">
-                <a href="emergency-service.html" class="btn btn-danger">Emergency Service</a>
-            </div>
-        </div>
-    </nav>
+.registration-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 
-    <!-- Registration Form -->
-    <div class="registration-layout">
-        <!-- Progress Steps -->
-        <div class="progress-bar">
-            <div class="progress-step active">
-                <div class="step-number">1</div>
-                <div>Business Info</div>
-            </div>
-            <div class="progress-step">
-                <div class="step-number">2</div>
-                <div>Services</div>
-            </div>
-            <div class="progress-step">
-                <div class="step-number">3</div>
-                <div>Verification</div>
-            </div>
-        </div>
+.form-group {
+    margin-bottom: 1.5rem;
+}
 
-        <!-- Form Card -->
-        <div class="form-card">
-            <div class="form-header">
-                <h1>List Your Business</h1>
-                <p>Join our network of trusted service providers</p>
-            </div>
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
 
-            <form action="/register" method="POST">
-                <!-- Business Information -->
-                <div class="form-section">
-                    <h2>Business Information</h2>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Business Name</label>
-                            <input type="text" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Business Phone</label>
-                            <input type="tel" class="form-input" required>
-                        </div>
-                    </div>
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
 
-                    <div class="form-group">
-                        <label>Business Address</label>
-                        <input type="text" class="form-input" required>
-                    </div>
+.form-section {
+    margin-bottom: 2rem;
+}
 
-                    <div class="form-group">
-                        <label>Service Area (ZIP Codes)</label>
-                        <input type="text" class="form-input" placeholder="Enter ZIP codes you serve">
-                    </div>
-                </div>
+.form-section h3 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
 
-                <!-- Service Options -->
-                <div class="form-section">
-                    <h2>Services Offered</h2>
-                    <div class="service-options">
-                        <label class="checkbox-card">
-                            <input type="checkbox" name="services[]" value="plumbing">
-                            <span>Plumbing</span>
-                        </label>
-                        <label class="checkbox-card">
-                            <input type="checkbox" name="services[]" value="electrical">
-                            <span>Electrical</span>
-                        </label>
-                        <label class="checkbox-card">
-                            <input type="checkbox" name="services[]" value="hvac">
-                            <span>HVAC</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Emergency Services -->
-                <div class="form-section">
-                    <h2>Emergency Services</h2>
-                    <label class="checkbox-card">
-                        <input type="checkbox" name="emergency_available">
-                        <span>Available for Emergency Services</span>
-                    </label>
-                    
-                    <div class="form-group">
-                        <label>Average Response Time</label>
-                        <select class="form-input">
-                            <option>Under 30 minutes</option>
-                            <option>30-60 minutes</option>
-                            <option>1-2 hours</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Account Information -->
-                <div class="form-section">
-                    <h2>Account Information</h2>
-                    <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" class="form-input" required>
-                    </div>
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Confirm Password</label>
-                            <input type="password" class="form-input" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn btn-outline">Back</button>
-                    <button type="submit" class="btn btn-primary">Continue</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <!-- Same footer as other pages -->
-    </footer>
-</body>
-</html>
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
