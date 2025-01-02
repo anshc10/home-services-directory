@@ -318,6 +318,46 @@ body {
     .progress-bar {
         flex-direction: column;
         gap: 1rem;
+}
+    /* Footer Styles */
+.footer {
+    background-color: var(--text); /* Dark background for better contrast */
+    color: white; /* White text for visibility */
+    text-align: center; /* Center-aligns the content */
+    padding: 20px 0; /* Padding for spacing */
+    width: 100%; /* Ensures footer spans full width */
+}
+
+.footer ul {
+    list-style-type: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Displays list items in a row */
+    justify-content: center; /* Centers list items horizontally */
+    align-items: center; /* Aligns items vertically */
+}
+
+.footer li {
+    margin: 0 15px; /* Adds horizontal spacing between list items */
+}
+
+.footer a {
+    color: white; /* White color for the links for readability */
+    text-decoration: none; /* No underline by default */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover for better user interaction */
+}
+
+@media (max-width: 768px) {
+    .footer ul {
+        flex-direction: column; /* Stacks the list vertically on small screens */
     }
+
+    .footer li {
+        margin: 10px 0; /* Adds vertical spacing between list items on small screens */
+    }
+
 }
 
