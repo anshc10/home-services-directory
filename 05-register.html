@@ -1,142 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Register your home service business. Join our network of trusted service providers and grow your business.">
-    
-    <title>Provider Registration | Home Services Directory</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Nav (simplified version) -->
-    <nav class="nav nav-simple">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/">HomeServePro</a>
-            </div>
-            <a href="/login" class="btn btn-outline">Provider Login</a>
-        </div>
-    </nav>
+/* Emergency Service Page Styles */
+.emergency-header {
+    background: var(--danger);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
 
-    <!-- Registration Container -->
-    <div class="auth-container">
-        <div class="auth-card auth-card-wide">
-            <div class="auth-header">
-                <h1>Register Your Business</h1>
-                <p>Join our network of trusted service providers</p>
-            </div>
+.emergency-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
 
-            <form class="auth-form" action="/register" method="POST">
-                <!-- Business Information -->
-                <div class="form-section">
-                    <h3>Business Information</h3>
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="business_name">Business Name</label>
-                            <input type="text" id="business_name" name="business_name" class="form-input" required>
-                        </div>
+.emergency-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
-                        <div class="form-group">
-                            <label for="business_phone">Business Phone</label>
-                            <input type="tel" id="business_phone" name="business_phone" class="form-input" required>
-                        </div>
-                    </div>
+/* Registration Page Styles */
+.registration-layout {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 
-                    <div class="form-group">
-                        <label for="business_address">Business Address</label>
-                        <input type="text" id="business_address" name="business_address" class="form-input" required>
-                    </div>
+.progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+}
 
-                    <div class="form-group">
-                        <label for="service_area">Service Area (ZIP Codes)</label>
-                        <input type="text" id="service_area" name="service_area" class="form-input" 
-                               placeholder="Enter ZIP codes separated by commas">
-                    </div>
-                </div>
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
 
-                <!-- Services -->
-                <div class="form-section">
-                    <h3>Services Offered</h3>
-                    
-                    <div class="service-options">
-                        <label class="checkbox-card">
-                            <input type="checkbox" name="services[]" value="plumbing">
-                            <span class="checkbox-content">
-                                <span class="service-icon">🚰</span>
-                                <span class="service-name">Plumbing</span>
-                            </span>
-                        </label>
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
 
-                        <label class="checkbox-card">
-                            <input type="checkbox" name="services[]" value="electrical">
-                            <span class="checkbox-content">
-                                <span class="service-icon">⚡</span>
-                                <span class="service-name">Electrical</span>
-                            </span>
-                        </label>
+.progress-step.active .step-number {
+    background: var(--primary);
+    color: white;
+}
 
-                        <!-- More service options -->
-                    </div>
-                </div>
+.form-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-                <!-- Credentials -->
-                <div class="form-section">
-                    <h3>Credentials</h3>
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="license">License Number</label>
-                            <input type="text" id="license" name="license" class="form-input">
-                        </div>
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
 
-                        <div class="form-group">
-                            <label for="insurance">Insurance Coverage</label>
-                            <input type="text" id="insurance" name="insurance" class="form-input">
-                        </div>
-                    </div>
-                </div>
+.checkbox-card {
+    display: block;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
 
-                <!-- Account Information -->
-                <div class="form-section">
-                    <h3>Account Information</h3>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" class="form-input" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="confirm_password">Confirm Password</label>
-                            <input type="password" id="confirm_password" name="confirm_password" class="form-input" required>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <label class="checkbox">
-                        <input type="checkbox" name="terms" required>
-                        I agree to the <a href="/terms" class="link">Terms of Service</a> and 
-                        <a href="/privacy" class="link">Privacy Policy</a>
-                    </label>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-block btn-lg">
-                    Complete Registration
-                </button>
-            </form>
-
-            <div class="auth-footer">
-                <p>Already have an account? <a href="/login" class="link">Log in here</a></p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
