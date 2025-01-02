@@ -169,135 +169,10 @@ body {
     font-size: 1.125rem;
 }
 
-/* Service Cards */
-.emergency-services {
-    padding: 3rem 0;
-}
-
-.emergency-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.emergency-card {
-    background: var(--card);
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.2s;
-}
-
-.emergency-card:hover {
-    transform: translateY(-2px);
-}
-
-.service-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Stats Grid */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.stat-card {
-    background: var(--card);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--primary);
-}
-
-.stat-label {
-    color: var(--text);
-    opacity: 0.8;
-}
-
-/* How It Works */
-.how-it-works {
-    background: white;
-    padding: 4rem 0;
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.step-card {
-    text-align: center;
-    padding: 2rem;
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-weight: bold;
-}
-
-/* Footer */
-.footer {
-    background: white;
-    padding: 4rem 0 2rem;
-    border-top: 1px solid var(--border);
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-}
-
-.footer h4 {
-    margin-bottom: 1rem;
-}
-
-.footer ul {
-    list-style: none;
-}
-
-.footer li {
-    margin-bottom: 0.5rem;
-}
-
-.footer a {
-    color: var(--text);
-    text-decoration: none;
-    opacity: 0.8;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-}
-
-/* Registration Form Styles */
+/* Registration Page Styles */
 .registration-layout {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 2rem;
 }
 
@@ -305,6 +180,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    padding: 2rem 0;
 }
 
 .progress-step {
@@ -312,6 +188,23 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.progress-step.active .step-number {
+    background: var(--primary);
+    color: white;
 }
 
 .form-card {
@@ -319,6 +212,15 @@ body {
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: var(--shadow-md);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
 }
 
 .form-grid {
@@ -331,6 +233,12 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
 .form-input {
     width: 100%;
     padding: 0.75rem 1rem;
@@ -339,5 +247,76 @@ body {
     font-size: 1rem;
 }
 
+.checkbox-card {
+    display: block;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Service Cards */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+}
+
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
 /* Responsive Design */
-@
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-search {
+        margin: 1rem 0;
+        max-width: 100%;
+    }
+
+    .hero-search {
+        flex-direction: column;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-bar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
