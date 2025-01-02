@@ -84,70 +84,239 @@ body {
     gap: 1rem;
 }
 
-/* Footer Styles */
-.footer {
-    background-color: #1E293B; /* Dark background for footer */
+/* Hero Section */
+.hero {
+    background: var(--primary);
     color: white;
-    padding: 20px 0;
-    font-size: 0.9rem;
+    padding: 4rem 1rem;
+    text-align: center;
 }
 
-.footer .container {
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* Search Form */
+.hero-search {
+    display: flex;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.select-input, .search-input {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.search-options {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    color: white;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid var(--border);
+    background: white;
+    color: var(--text);
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* Registration Page Styles */
+.registration-layout {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.progress-bar {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Ensure responsiveness */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
 }
 
-.footer-section {
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 1;
-    min-width: 200px; /* Minimum width of each footer section */
-    margin-right: 20px; /* Spacing between sections */
+    position: relative;
 }
 
-.footer-section h4 {
-    margin-bottom: 10px;
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
 }
 
-.footer-section ul {
-    list-style-type: none; /* Remove bullets from list */
-    padding: 0;
-}
-
-.footer-section li + li {
-    margin-top: 5px; /* Spacing between list items */
-}
-
-.footer-section a {
+.progress-step.active .step-number {
+    background: var(--primary);
     color: white;
-    text-decoration: none; /* No underline */
 }
 
-.footer-section a:hover {
-    text-decoration: underline; /* Underline on hover */
+.form-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
 }
 
-.footer-bottom {
+.form-header {
     text-align: center;
-    width: 100%;
-    margin-top: 20px; /* Space between sections and copyright */
+    margin-bottom: 2rem;
 }
 
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.checkbox-card {
+    display: block;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Service Cards */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+}
+
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .footer .container {
-        flex-direction: column; /* Stack the sections on small screens */
-        align-items: center;
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .footer-section {
-        margin-right: 0;
-        margin-bottom: 20px; /* Space between stacked sections */
+    .nav-search {
+        margin: 1rem 0;
+        max-width: 100%;
     }
 
-    .footer-bottom {
-        order: 99; /* Ensures it is always at the bottom */
+    .hero-search {
+        flex-direction: column;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-bar {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
